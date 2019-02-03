@@ -99,14 +99,6 @@ document.addEventListener("keyup", function(event) {
 
     if (event.keyCode >= 65 && event.keyCode <= 90) {
       //make sure the user hasn't already guessed that letter yet
-      // for (var l = 0; l < guessedLetters.length; l++) {
-      //   if (key == guessedLetters[l]) {
-      //     alert(
-      //       "You already guessed that letter! Please guess another one!"
-      //     );
-      //     return;
-      //   } else {
-      // testLetter(key) and see if it matches anything in the word
 
       for (var i = 0; i < numberOfCharacters; i++) {
         for (var l = 0; l < numberOfLettersGuessed + 1; l++) {
@@ -180,17 +172,6 @@ document.addEventListener("keyup", function(event) {
   }
 });
 
-//   function testLetter(k) {
-//     for (i = 0; i < numberOfCharacters.length; i++) {
-//       console.log("We're in teh function!");
-//       if (k == selectedSinger[i]) {
-//         console.log("We're getting somewhere!");
-//       } else {
-//         console.log("We're getting nowhere");
-//       }
-//     }
-//   }
-
 var playAgainButton = document.getElementById("playAgain");
 
 playAgainButton.addEventListener("click", function() {
@@ -212,6 +193,3 @@ function youWon() {
   gamesWonElement.textContent = "Number of Games Won: " + numberOfGamesWon;
   gameOver = true;
 }
-
-//create a "game over" variable--if the user presses a key and the agme is over, they should jsut get an alert saying the game is over
-//add formatting
