@@ -156,11 +156,7 @@ document.addEventListener("keyup", function(event) {
 
       //setting up the different win/lose conditions
       if (numberOfLetters == 0 && numberofGuessesLeft > 0) {
-        alert("You won!");
-        numberOfGamesWon++;
-        gamesWonElement.textContent =
-          "Number of Games Won: " + numberOfGamesWon;
-        gameOver = true;
+        youWon();
       } else if (numberofGuessesLeft == 0 && numberOfLetters > 0) {
         alert("You lost. The correct answer was " + selectedSinger);
         numberOfGamesLost++;
@@ -168,13 +164,7 @@ document.addEventListener("keyup", function(event) {
           "Number of Games Lost: " + numberOfGamesLost;
         gameOver = true;
       } else if (numberOfLetters == 0 && numberofGuessesLeft == 0) {
-        alert("You won");
-        numberOfGamesWon++;
-        gamesWonElement.textContent =
-          "Number of Games Won: " + numberOfGamesWon;
-        gameOver = true;
-      } else {
-        console.log("Onto the next one!");
+        youWon();
       }
 
       //resetting addToLettersGuessed to true to prepare for the next letter guessed in the loop
@@ -215,6 +205,13 @@ playAgainButton.addEventListener("click", function() {
 
   prepareRound();
 });
+
+function youWon() {
+  alert("You won!");
+  numberOfGamesWon++;
+  gamesWonElement.textContent = "Number of Games Won: " + numberOfGamesWon;
+  gameOver = true;
+}
 
 //create a "game over" variable--if the user presses a key and the agme is over, they should jsut get an alert saying the game is over
 //add formatting
